@@ -1,9 +1,11 @@
 #pragma once
 // By Oleksiy Grechnyev
-
-#include "./glheader.h"
-
-namespace MotokoGL {
+#define GLEW_STATIC
+#include <GL/glew.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
+namespace GtkGL {
 /// The simple camera implementation with target, position,
 class SimpleCamera {
 public: //======== Methods
@@ -11,13 +13,15 @@ public: //======== Methods
     // Create the camera matrix (proj*view) using our data
     virtual glm::mat4 matrix(){
         using namespace glm;
-//        vec3 dir = normalize(pos - target); // The camera direction (from target to pos)
+        //        vec3 dir = normalize(pos - target); // The camera direction (from target to pos)
 
         // View matrix
         mat4 view = lookAt(pos, target, up);
 
         // Projection (perspective) matrix
         mat4 proj = perspective(0.8f, aspect, zMin, zMax);
+//        mat4 proj = perspective(45.0f, aspect, zMin, zMax);
+//        projection = glm::perspective(45.0f, (GLfloat)WindowWidth / (GLfloat)WindowHeight, 0.1f, 100.0f);
 
         return proj*view;
     }

@@ -1,7 +1,7 @@
 #pragma once
 // By Oleksiy Grechnyev
 
-namespace MotokoGL {
+namespace GtkGL {
 /// The Vao interface. Anything that can be drawn with OpenGL.
 class IVao{
 public: //==== Abstract methods

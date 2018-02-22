@@ -4,8 +4,7 @@
 //
 //================================================================================
 #include <string>
-#define GLEW_STATIC
-#include <GL/glew.h>
+#include "glheader.h"
 #include <opencv2/opencv.hpp>
 
 namespace GtkGL {
@@ -17,7 +16,7 @@ public:
 
 public:  //======= Methods
     /// Load texture from file with SOIL
-    static Tex fromFile(const std::string & fileName);
+    //    static Tex fromFile(const std::string & fileName);
 
     /// Load texture from OpenCV image CV::Mat
     static Tex fromMat(const cv::Mat & image);
@@ -45,6 +44,7 @@ public:  //======= Methods
 
 public:
     GLuint tex;
+private:
     int w = 0, h = 0;
 };
 }

@@ -1,4 +1,3 @@
-#include <SOIL.h>
 #include "Tex.h"
 namespace GtkGL {
 Tex::Tex() {
@@ -19,30 +18,29 @@ Tex::Tex() {
 }
 //==============================================================
 
-Tex Tex::fromFile(const std::string &fileName) {
-    Tex t;
+//Tex Tex::fromFile(const std::string &fileName) {
+//    Tex t;
 
-    // Bind
-    glBindTexture(GL_TEXTURE_2D, t.tex);
+//    // Bind
+//    glBindTexture(GL_TEXTURE_2D, t.tex);
 
-    // Load image from a file with SOIL
-    unsigned char *image = SOIL_load_image(fileName.c_str(), &t.w, &t.h, 0, SOIL_LOAD_RGB);
+//    // Load image from a file with SOIL
+//    unsigned char *image = SOIL_load_image(fileName.c_str(), &t.w, &t.h, 0, SOIL_LOAD_RGB);
 
-    if (image == NULL)
-        std::cout << "Tex::oadTexture() : Cannot load image!" << std::endl;
+//    if (image == NULL)
+//        std::cout << "Tex::oadTexture() : Cannot load image!" << std::endl;
 
-    // Set up the image
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, t.w, t.h, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
-    glGenerateMipmap(GL_TEXTURE_2D);
+//    // Set up the image
+//    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, t.w, t.h, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+//    glGenerateMipmap(GL_TEXTURE_2D);
 
-    // Free memory and unbind
-    SOIL_free_image_data(image);
-    glBindTexture(GL_TEXTURE_2D, 0);
+//    // Free memory and unbind
+//    SOIL_free_image_data(image);
+//    glBindTexture(GL_TEXTURE_2D, 0);
 
-    return t;
-}
+//    return t;
+//}
 //==============================================================
-
 Tex Tex::fromMat(const cv::Mat &image) {
     Tex t;
 

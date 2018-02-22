@@ -53,6 +53,12 @@ Shader Shader::fromMem(const GLchar *vertexSource, const GLchar *fragmentSource)
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
+    // Set uniforms
+//    newProg.uCam = newProg.loc("uCam");
+//    newProg.uModel = newProg.loc("uModel");
+//    newProg.uView = newProg.loc("uView");
+//    newProg.uProj = newProg.loc("uProj");
+
     return newProg;
 }
 //==============================================================
@@ -85,4 +91,3 @@ std::shared_ptr<std::string> Shader::parseFile(const std::string &fileName)
 }
 }
 //==============================================================
-

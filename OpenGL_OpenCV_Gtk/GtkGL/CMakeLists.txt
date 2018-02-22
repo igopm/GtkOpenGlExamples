@@ -9,8 +9,11 @@ set (SOURCE_FILES
     #      ./fatal.h
     ./Tex.h ./Tex.cpp
     ./Shader.h ./Shader.cpp
-    #      ./SimpleCamera.h
+    ./Vao.h ./Vao.cpp
+    ./IVao.h
+    ./SimpleCamera.h
     ./GtkGL.h
+    ./glheader.h
     )
 
 add_library(${PROJECT_NAME} ${SOURCE_FILES})
