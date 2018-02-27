@@ -9,7 +9,7 @@ using namespace std;
 //=====================================================================================================
 MainWindow::MainWindow(const Glib::RefPtr<Gtk::Application>& app){
     //========================================================================================
-    set_title("Main Window Demo 8");
+    set_title("Main Window 8");
     set_resizable(false);
     set_icon_from_file("common_textures/photo.jpg");
     set_default_size(640, 480);
